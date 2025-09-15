@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Random Number Generator</h1>
+  </header>
+
+  <main>
+    <label>From: <input type="number" id="min" value="1"></label>
+    <label>To: <input type="number" id="max" value="100"></label>
+    <button onclick="generate()">Generate</button>
+    <h2 id="result"></h2>
+
+    <!-- Adsense contoh -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1234567890123456"
+         data-ad-slot="9876543210"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </main>
+
+  <footer>
+    &copy; 2025 RandomNumber. All rights reserved.
+  </footer>
+
+  <script>
+    function generate() {
+      const min = parseInt(document.getElementById('min').value);
+      const max = parseInt(document.getElementById('max').value);
+      if (!isNaN(min) && !isNaN(max) && min <= max) {
+        const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+        document.getElementById('result').textContent = "🎲 " + randomNum;
+      } else {
+        document.getElementById('result').textContent = "Invalid range!";
+      }
+    }
+  </script>
+</body>
+</html>
